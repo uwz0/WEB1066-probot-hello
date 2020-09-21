@@ -16,7 +16,7 @@ stages:
 jobs:
   include:
     - stage: npm-targets
-      name: "Test 8-jessie"
+      name: "Test 8-jessie test"
       install: skip
       script:
       - docker run --rm $DOCKER_USERNAME/probot-hello:$NODE_VERSION-$(git rev-parse HEAD) npm run $NPM_TARGET
@@ -24,7 +24,7 @@ jobs:
       - NODE_VERSION=8-jessie
       - NPM_TARGET=test
     - stage: npm-targets
-      name: "Test 8-jessie"
+      name: "Test 8-jessie lint"
       install: skip
       script:
       - docker run --rm $DOCKER_USERNAME/probot-hello:$NODE_VERSION-$(git rev-parse HEAD) npm run $NPM_TARGET
@@ -32,7 +32,7 @@ jobs:
       - NODE_VERSION=8-jessie
       - NPM_TARGET=lint      
     - stage: npm-targets
-      name: "Test 8-jessie"
+      name: "Test 8-jessie coverage"
       install: skip
       script:
       - docker run --rm $DOCKER_USERNAME/probot-hello:$NODE_VERSION-$(git rev-parse HEAD) npm run $NPM_TARGET
@@ -40,7 +40,7 @@ jobs:
       - NODE_VERSION=10-jessie
       - NPM_TARGET=coverage      
     - stage: npm-targets
-      name: "Test 10-jessie"
+      name: "Test 10-jessie test"
       install: skip
       script:
       - docker run --rm $DOCKER_USERNAME/probot-hello:$NODE_VERSION-$(git rev-parse HEAD) npm run $NPM_TARGET
@@ -48,7 +48,7 @@ jobs:
       - NODE_VERSION=10-jessie
       - NPM_TARGET=test
     - stage: npm-targets
-      name: "Test 10-jessie"
+      name: "Test 10-jessie lint"
       install: skip
       script:
       - docker run --rm $DOCKER_USERNAME/probot-hello:$NODE_VERSION-$(git rev-parse HEAD) npm run $NPM_TARGET
@@ -56,7 +56,7 @@ jobs:
       - NODE_VERSION=10-jessie
       - NPM_TARGET=lint      
     - stage: npm-targets
-      name: "Test 10-jessie"
+      name: "Test 10-jessie coverage"
       install: skip
       script:
       - docker run --rm $DOCKER_USERNAME/probot-hello:$NODE_VERSION-$(git rev-parse HEAD) npm run $NPM_TARGET
